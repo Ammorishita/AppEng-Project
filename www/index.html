@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alex Morishita - Developer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+	<link rel="import" href="bower_components/polymer/polymer.html">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400">
+	<link rel="import" href="src/app-nav.html">
+	<link rel="import" href="src/app-education.html">
+	<link rel="import" href="src/app-experience.html">
+	<link rel="import" href="src/app-skills.html">
+	<link rel="import" href="src/app-projects.html">
+	<link rel="import" href="src/app-footer.html">
+	<link rel="import" href="src/app-project-skills.html">
+</head>
+<body>
+	<main>
+		<article> 
+			<section class="container">
+				<div class="toTop">/\<span>Top</span></div>
+				<app-nav>
+					<span slot="about"><a class="nav" href="#resume">Resume</a></span>
+					<span slot="projects"><a class="nav" href="#portfolio">Portfolio</a></span>
+					<span slot="extra"><a class="nav" href="#misc">Misc</a></span>
+					<span slot="contact"><a class="nav" href="#contact">Contact</a></span>
+				</app-nav>
+				<div class="content">
+					<div class="resume" id="resume">
+						<app-education>
+						</app-education>
+						<app-experience>
+						</app-experience>
+						<app-skills>
+							<li>Photoshop</li>
+							<li>Illustrator</li>
+							<li>jQuery</li>
+							<li>Javascript</li>
+							<li>CSS</li>
+							<li>HTML</li>
+							<li>SASS</li>
+							<li>Git/Github</li>
+							<li>Knockout.js</li>
+							<li>Polymer</li>
+						</app-skills>
+					</div>
+					<div class="portfolio" id="portfolio">
+						<app-projects title="Udacity Project - Neighboyhood Map" description="A single page web app that displays restaurant locations using google maps api and yelp api data." image="images/NeighboorhoodProject.png" source="/Projects/NeighborhoodMap/index.html">
+							<app-project-skills technical='["Javascript","HTML","CSS","jQuery","Knockout.js", "APIs"]'>
+							</app-project-skills>
+						</app-projects>	
+
+						<app-projects title="Zing Chart - Yelp API" description="Constructed a simple bar graph using ZingChart that allows for yelp searches and displays review data." image="images/ZingChart.png" source="/Projects/Zingchart/index.html">
+							<app-project-skills technical='["Javascript","HTML","CSS","jQuery","ZingChart"]'>
+							</app-project-skills>
+						</app-projects>	
+
+						<app-projects title="Udacity Project - Arcade Game" description="An arcade game created with HTML5 Canvas.  Contains basic player and enemy functions." image="images/Arcade.png" source="/Arcade-game/index.html">
+							<app-project-skills technical='["Javascript","HTML5","HTML5 Canvas","jQuery","CSS"]'>
+							</app-project-skills>
+						</app-projects>	
+
+						<app-projects title="Grid Box" description="A top down shooter game that incorporates items, levels and enemies." image="images/GridBox.png" source="Projects/Box-Shooter/game.html">
+							<app-project-skills technical='["Javascript","HTML","CSS","jQuery"]'>
+							</app-project-skills>
+						</app-projects>
+
+						<app-projects title="Traffic Simulation" description="Traffic Simulation implements traffic lights, intersections, turns, and cars in a semi real world situation." image="images/Traffic Preview.png" source="/Projects/Traffic/index.html">
+							<app-project-skills technical='["Javascript","HTML","CSS"]'>
+							</app-project-skills>
+						</app-projects>						
+					</div>
+					<div class="contact">
+						<h2>Send A Message</h2>
+						<form id="contact" class="contact-form">
+						<div class="alert">Your message has been sent.</div>
+						    <div>
+						        <label for="name">Name:</label>
+						        <input type="text" id="name" name="user_name" required>
+						    </div>
+						    <div>
+						        <label for="mail">E-mail:</label>
+						        <input type="email" id="mail" name="user_mail" required>
+						    </div>
+						    <div>
+						        <label for="msg">Message:</label>
+						        <textarea id="msg" name="message" required></textarea>
+						    </div>
+							<div class="button">
+							  <button type="submit">Send your message</button>
+							</div>
+						</form>
+					</div>		
+					<div class="misc" id="misc">
+
+
+					</div>					
+				</div>
+				<footer>
+					<app-footer>
+
+					</app-footer>
+				</footer>
+			</section>
+		</article>	
+	</main>
+	<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+	<script src="js/index.js" defer="defer"></script>
+	<script src="js/contact.js"></script>
+</body>
+</html>

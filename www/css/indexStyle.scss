@@ -1,0 +1,48 @@
+object, svg {
+
+}
+path, line, polyline {
+    stroke-width: 2;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: draw;
+    animation-timing-function: linear;
+    &#first {
+      stroke: Dodgerblue;
+      stroke-dasharray: 800;
+      stroke-dashoffset: 800;
+      animation-duration: 15s;
+      &.glasses {
+      	stroke: #00ffcc;
+      }
+    }
+}
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+button { 
+	z-index: 1000;
+}
+canvas {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+}
+.click {
+	display: block;
+	background: black;
+	border-radius: 50%;
+	height: 10px;
+	width: 10px;
+	position: absolute;
+	transition: all 3s;
+	-webkit-transition: all 3s;
+	border: 1px solid Dodgerblue;
+}
+.active {
+	border: 1px solid Dodgerblue;
+}

@@ -1,0 +1,114 @@
+<link rel="import" href="/bower_components/polymer/polymer-element.html">
+<link rel="import" href="/bower_components/polymer/lib/elements/dom-repeat.html">
+
+<dom-module id="app-projects">
+	<template>
+			<style>
+				:host {
+					display: block;
+					text-align: center;
+					overflow: hidden;
+					color: white;
+				}
+				a {
+					color: white;
+				}
+				h2 {
+					text-align: center;
+				}
+				h3 {
+					text-align: center;
+				}
+				li {
+					border: 1px solid white;
+					background-color: Dodgerblue;
+					list-style-type: none;
+					min-width: 50px;
+					margin: 5px auto;
+					padding: 2px 2px;
+					color: black;
+					text-align: center;
+				}
+				p {
+					text-align: center;
+				}
+				.project-container {
+					border: 1px solid Dodgerblue;
+					display: inline-block;
+					margin: 25px 25px;
+					max-width: 450px;
+					transition: all .5s ease;
+				}
+				.skill-container {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-around;
+				}
+				@media screen and (max-width: 500px) {
+					img {
+						display: none;
+					}
+				}
+				@media screen and (min-width: 800px) {
+					:host {
+						display: inline-block;
+						width: 390px;
+						margin: auto;
+					}
+					.project-container {
+
+					}
+					.project-container:hover {
+						-webkit-box-shadow: 0px 0px 16px 5px rgba(3,116,237,1);
+						-moz-box-shadow: 0px 0px 16px 5px rgba(3,116,237,1);
+						box-shadow: 0px 0px 16px 5px rgba(3,116,237,1);
+						transform: scale(1.02);
+					}
+				}
+				@media screen and (min-width: 1300px) {
+					:host {
+						width: 430px;
+					}
+				}
+			</style>
+			<a href="[[source]]" target="_blank">
+			<div class="project-container">
+				<h3>[[title]]</h3>
+				<img src="[[image]]" alt="" width="100%" height="250">
+				<p>[[description]]</p>
+				<slot></slot>
+			</div>
+			</a>
+	</template>
+</dom-module>
+<script>
+	class Projects extends Polymer.Element {
+		static get is() {
+			return 'app-projects';
+		}
+		static get properties() {
+			return {
+				title: {
+					type: String
+				},
+				description: {
+					type: String
+				},
+				image: {
+					type: String
+				},
+				source: {
+					type: String
+				}
+			}
+		}
+		connectedCallback() {
+			super.connectedCallback();
+			this._items();
+		}
+		_items() {
+		}
+	}
+
+	customElements.define('app-projects', Projects);
+</script>

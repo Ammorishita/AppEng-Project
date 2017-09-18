@@ -1,0 +1,67 @@
+<link rel="import" href="/bower_components/polymer/polymer-element.html">
+<link rel="import" href="/bower_components/polymer/lib/elements/dom-repeat.html">
+
+<dom-module id="app-skills">
+	<template>
+		<style>
+			h2 {
+				text-align: center;
+				color: white;
+			}
+		</style>
+		<h2 on-click="collapse">Skills</h2>
+		<div class="container">
+			<style>
+				:host {
+					display: block;
+					max-width: 800px;
+					margin: auto;
+				}
+				::slotted(li) {
+					border: 1px solid white;
+					color: dodgerblue;
+					display: inline-block;
+					margin: 5px 10px;
+					padding: 2px 2px;
+					text-align: center;
+					width: 90px;
+				};
+				h2:hover {
+					cursor: pointer;
+				}
+				.container {
+					transition: all 0.7s ease;
+					-webkit-transition: all 0.7s ease;
+					display: flex;
+					flex-wrap: wrap;
+					text-align: center;
+					justify-content: center;
+					max-height: 250px;
+				}
+				.container-active {
+					max-height: 0px;
+					overflow: hidden;
+				}
+			</style>
+			<div class="container">
+				<slot></slot>
+			</div>	
+		</div>	
+	</template>
+</dom-module>
+<script>
+	class Skills extends Polymer.Element {
+		static get is() {
+			return 'app-skills';
+		}
+		connectedCallback() {
+			super.connectedCallback();
+		}
+		collapse() {
+			const container = this.shadowRoot.querySelector('.container');
+			container.classList.toggle('container-active');
+		}
+	}
+
+	customElements.define('app-skills', Skills);
+</script>
