@@ -1,0 +1,67 @@
+body {
+    text-align: center;
+    background-color: black;
+}
+main {
+	display: flex;
+	flex-wrap: wrap;
+	width: 800px;
+	background-color: black;
+	margin: auto;
+}
+#score {
+	color: blue;
+	font-size: 2em;
+	width: 700px;
+	margin: auto;
+	background-color: white;
+}
+#audio {
+	display: none;
+}
+#mute {
+	background-color: purple;
+	width: 700px;
+	margin: auto;
+	cursor: pointer;
+}
+#mute:hover {
+	color: red;
+}
+.instructions {
+	background-color: white;
+	color: black;
+	display: none;
+	top: 400px;
+	width: 800px;
+	margin: auto;
+	position: absolute;
+	border: 5px solid blue;
+}
+.menu {
+	width: 700px;
+	height: 100%;
+	background-color: purple;
+	color: white;
+	margin: auto;
+	cursor: pointer
+}
+.menu:hover {
+	color: blue;
+}
+.score {
+	color: red;
+	width: 700px;
+	margin: auto;
+}
+.title {
+	width: 1000px;
+	color: white;
+	margin: auto;
+}
+
+canvas {
+	width: 700px;
+	height: 700px;
+	margin: auto;
+}
